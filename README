@@ -1,0 +1,17 @@
+merb_simple_do
+==============
+
+1. sudo gem install merb_simple_do
+
+2. Edit init.rb:
+
+    use_orm :simple_do
+
+3. Rejoice:
+
+    def index
+      @users = DB.select("SELECT id, name FROM users", [Integer, String])
+    end
+
+Remember: simple_do is a convenience layer, not an ORM. There are no models,
+unless you feel like building one.
