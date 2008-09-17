@@ -4,7 +4,6 @@ if defined?(Merb::Plugins)
   
   Merb::BootLoader.before_app_loads do
     Merb.logger.info("Connecting to database...")
-    ::DB = DataObjects::Simple.new(Merb.dir_for(:config) / "database.yml", Merb.environment)
-    ::DB.logger = Merb.logger
+    ::DB = DataObjects::Simple.new(Merb.dir_for(:config) / "database.yml", Merb.environment, Merb.logger)
   end
 end
