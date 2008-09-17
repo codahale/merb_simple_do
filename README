@@ -10,7 +10,7 @@ merb_simple_do
 3. Rejoice:
 
     def index
-      @users = DB.select("SELECT id, name FROM users", [Integer, String])
+      @users = DB.select("SELECT id, name FROM users WHERE age > ?", [Integer, String], 20)
     end
 
 Remember: simple_do is a convenience layer, not an ORM. There are no models,
